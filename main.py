@@ -66,7 +66,7 @@ def query(call):
         select_markup = types.InlineKeyboardMarkup()
         select_markup.add(types.InlineKeyboardButton(select_button_txt, callback_data='sel'+call.data))
         message = open('assets/photoes/disobedbase' + call.data[-1] + '.jpeg', 'rb')
-        bot.send_photo(id, message, caption=disobedbase[call.data[-1]]+disclaimer, reply_markup=select_markup, parse_mode='Markdown')
+        bot.send_photo(id, message, caption=disobedbase[call.data[-1]]+disclaimer, reply_markup=select_markup, parse_mode='HTML')
         message.close()
     elif 'disobedbase' in call.data and 'sel' not in call.data:
         select_markup = types.InlineKeyboardMarkup()
